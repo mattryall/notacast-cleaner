@@ -7,9 +7,13 @@ import clean_notacast
 
 
 def lambda_handler(event, context):
+    token = None
     try:
         token = event['queryStringParameters']['auth']
     except (TypeError, KeyError):
+        pass
+
+    if not token:
         return {
             'statusCode': 400,
             'headers': {'Content-Type': 'text/plain'},
