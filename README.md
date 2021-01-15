@@ -77,3 +77,5 @@ variables, and running `deploy.py`:
 2021-01-15 20:59:57,434 [INFO] botocore.credentials Found credentials in environment variables.
 2021-01-15 20:59:57,704 [INFO] __main__ Updated lambda successfully
 ```
+
+![Deploy](https://github.com/mattryall/notacast-cleaner/workflows/deploy/badge.svg)
