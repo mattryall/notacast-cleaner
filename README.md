@@ -24,7 +24,11 @@ I'm running this as a service which you can use at:
 Just stick your Patreon auth token at the end of this URL and add it to your 
 podcast client instead of the normal Patreon feed.
 
-You can also run it yourself, if you prefer. Instructions on how to do that below.
+Your Patreon auth token is not stored anywhere except if there's an error and
+the URL needs to be logged. These logs are accessible only to me, and kept for
+30 days before being deleted.
+
+If you prefer, you can run it yourself. Instructions on how to do that below.
 
 ### Running the script
 
