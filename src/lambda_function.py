@@ -2,6 +2,7 @@
 
 import base64
 import os
+from urllib.error import HTTPError
 
 import clean_notacast
 
@@ -11,7 +12,7 @@ def lambda_handler(event, context):
     try:
         token = event['queryStringParameters']['auth']
     except (TypeError, KeyError):
-        pass
+        pass  # fall through to token check below
 
     if not token:
         return {
@@ -22,7 +23,18 @@ def lambda_handler(event, context):
                     '"https://api.mattryall.net/notacast/notacast-clean.rss?auth=...".\n\n'
         }
 
-    buf = clean_notacast.clean_feed(token)
+    try:
+        buf = clean_notacast.clean_feed(token)
+    except HTTPError as e:
+        return {
+            'statusCode': e.code,
+            'headers': {'Content-Type': 'text/plain'},
+            'body': f'Error retrieving feed: {type(e).__name__} {e.code} {e.reason}\n\n'
+                    f'URL: {e.url}\n\n'
+                    f'Please check your auth token is correct, and you have a valid '
+                    f'NotACast subscription on Patreon.\n\n'
+        }
+
     return {
         'statusCode': 200,
         'isBase64Encoded': True,
