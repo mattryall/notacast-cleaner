@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0">
+    <channel>
+        <title>NotAPodcast</title>
+        <link>https://www.patreon.com/NotACastASOIAF</link>
+        <description>NotAPodcast's Private RSS Feed for Matt Ryall</description>
+        <atom:link href="https://www.patreon.com/rss/1342272" rel="self" type="application/rss+xml"></atom:link>
+        <itunes:owner>
+            <itunes:name>NotAPodcast</itunes:name>
+            <itunes:email>support@patreon.com</itunes:email>
+        </itunes:owner>
+        <itunes:author>NotAPodcast</itunes:author>
+        <googleplay:block>yes</googleplay:block>
+        <itunes:block>Yes</itunes:block>
+        <language>en-US</language>
+        <pubDate>Fri, 15 Jan 2021 04:59:52 GMT</pubDate>
+        <lastBuildDate>Fri, 15 Jan 2021 04:59:52 GMT</lastBuildDate>
+        <image>
+            <title>NotAPodcast</title>
+            <link>https://www.patreon.com/NotACastASOIAF</link>
+        </image>
+        <item>
+            <title>Episode 141: A CLASH OF KINGS, TYRION XIII: "Look Upon My Works"</title>
+            <link>https://www.patreon.com/posts/episode-141-of-45875315</link>
+            <description>&lt;p&gt;ACOK, Tyrion XIII is now available for everyone!&lt;/p&gt;</description>
+            <enclosure url="" length="60333367" type="audio/mpeg"></enclosure>
+            <guid isPermaLink="false">45875315</guid>
+            <pubDate>Mon, 11 Jan 2021 12:01:00 GMT</pubDate>
+        </item>
+        <item>
+            <title>Episode 141: A CLASH OF KINGS, TYRION XIII: "Look Upon My Works"</title>
+            <link>https://www.patreon.com/posts/episode-141-of-45875306</link>
+            <description>&lt;p&gt;ACOK, Tyrion XIII is now available for our Poor Fellow patrons!&lt;/p&gt;
+            </description>
+            <enclosure url="" length="60333367" type="audio/mpeg"></enclosure>
+            <guid isPermaLink="false">45875306</guid>
+            <pubDate>Sun, 10 Jan 2021 12:01:00 GMT</pubDate>
+        </item>
+        <item>
+            <title>Episode 140: A CLASH OF KINGS, DAVOS III: "Inferno (Part 2)"</title>
+            <link>https://www.patreon.com/posts/episode-140-of-2-45608867</link>
+            <description>&lt;p&gt;ACOK, Davos III (Part 2) is available for everyone!&lt;/p&gt;</description>
+            <enclosure url="" length="79474329" type="audio/mpeg"></enclosure>
+            <guid isPermaLink="false">45608867</guid>
+            <pubDate>Mon, 04 Jan 2021 12:00:05 GMT</pubDate>
+        </item>
+        <item>
+            <title>Episode 140: A CLASH OF KINGS, DAVOS III: "Inferno (Part 2)"</title>
+            <link>https://www.patreon.com/posts/episode-140-of-2-45608869</link>
+            <description>&lt;p&gt;ACOK, Davos III (Part 2) is available for our Poor Fellow patrons!&lt;/p&gt;
+            </description>
+            <enclosure url="" length="79474329" type="audio/mpeg"></enclosure>
+            <guid isPermaLink="false">45608869</guid>
+            <pubDate>Sun, 03 Jan 2021 12:00:02 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

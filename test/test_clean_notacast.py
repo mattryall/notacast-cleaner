@@ -34,10 +34,9 @@ class TestCleanNotACast(unittest.TestCase):
         clean_notacast.indent(xml)
         self.assert_equal_to_output("test_3_output.xml", xml)
 
-    def test_byte_buffer(self):
-        xml = ElementTree.parse(TEST_DATA_PATH / "test_1_input.xml")
-        clean_notacast.indent(xml.getroot())
-        buf = io.BytesIO()
-        xml.write(buf, encoding='utf-8', xml_declaration=True)
-        print(str(buf.getvalue(), 'utf-8'))
+    def test_remove_duplicates(self):
+        xml = parse_input("test_4_input.xml")
+        clean_notacast.remove_duplicate_items(xml)
+        clean_notacast.indent(xml, spaces=4)
+        self.assert_equal_to_output("test_4_output.xml", xml)
 
