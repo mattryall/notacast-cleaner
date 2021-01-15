@@ -8,7 +8,7 @@ Patreon feed, which are quite annoying as a subscriber.
 
 The cleaner is running as a service at:
 
-* [https://api.mattryall.net/notacast/notacast-clean.rss?auth=...](https://api.mattryall.net/notacast/notacast-clean.rss?auth=...)
+* [https://api.mattryall.net/notacast/notacast-clean.rss?auth=](https://api.mattryall.net/notacast/notacast-clean.rss?auth=)
 
 Just stick your Patreon auth token at the end of the URL and away you go. 
 I don't log or store the tokens anywhere on my side.
