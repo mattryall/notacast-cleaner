@@ -78,4 +78,4 @@ variables, and running `deploy.py`:
 2021-01-15 20:59:57,704 [INFO] __main__ Updated lambda successfully
 ```
 
-![Deploy](https://github.com/mattryall/notacast-cleaner/workflows/deploy/badge.svg)
+![Deploy](https://github.com/mattryall/notacast-cleaner/workflows/Deploy/badge.svg)
