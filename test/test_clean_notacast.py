@@ -40,3 +40,9 @@ class TestCleanNotACast(unittest.TestCase):
         clean_notacast.indent(xml, spaces=4)
         self.assert_equal_to_output("test_4_output.xml", xml)
 
+    def test_update_metadata(self):
+        xml = parse_input("test_5_input.xml")
+        clean_notacast.update_metadata(xml)
+        clean_notacast.indent(xml, spaces=4)
+        self.assert_equal_to_output("test_5_output.xml", xml)
+

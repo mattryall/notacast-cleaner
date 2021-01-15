@@ -15,6 +15,20 @@ for prefix, uri in namespaces.items():
     ElementTree.register_namespace(prefix, uri)
 
 
+def clean_feed(auth_token: str) -> io.BytesIO:
+    url = 'https://www.patreon.com/rss/NotACastASOIAF?auth=' + auth_token
+    tree = get_feed(url)
+
+    root = tree.getroot()
+    remove_duplicate_items(root)
+    update_metadata(root)
+    indent(root)
+
+    buf = io.BytesIO()
+    tree.write(buf, encoding='utf-8', xml_declaration=True)
+    return buf
+
+
 def get_feed(feed_url: str) -> ElementTree:
     with urllib.request.urlopen(feed_url) as stream:
         return ElementTree.parse(stream)
@@ -44,28 +58,19 @@ def indent(elem: Element, level=0, spaces=2, last=False):
     return elem
 
 
-def clean_feed(auth_token: str) -> io.BytesIO:
-    url = 'https://www.patreon.com/rss/NotACastASOIAF?auth=' + auth_token
-    tree = get_feed(url)
-
-    root = tree.getroot()
-    remove_duplicate_items(root)
-    root.find("channel/title").text += " (Clean)"
-    root.find("channel/atom:link", namespaces=namespaces).attrib['href'] = \
+def update_metadata(root):
+    root.find('channel/title').text += ' (Clean)'
+    root.find('channel/link').text = 'https://api.mattryall.net/notacast/notacast-clean.rss'
+    root.find('channel/atom:link', namespaces=namespaces).attrib['href'] = \
         'https://api.mattryall.net/notacast/notacast-clean.rss'
-    indent(root)
-
-    buf = io.BytesIO()
-    tree.write(buf, encoding='utf-8', xml_declaration=True)
-    return buf
 
 
 def remove_duplicate_items(root):
     seen = {}
-    for item in reversed(root.findall("channel/item")):
-        title = item.findtext("title")
+    for item in reversed(root.findall('channel/item')):
+        title = item.findtext('title')
         if title in seen:
-            root.find("channel").remove(item)
+            root.find('channel').remove(item)
         else:
             seen[title] = True
 
