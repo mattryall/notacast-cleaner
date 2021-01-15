@@ -1,3 +1,4 @@
+import io
 import unittest
 from pathlib import Path
 from xml.etree import ElementTree
@@ -32,3 +33,11 @@ class TestCleanNotACast(unittest.TestCase):
         xml = parse_input("test_3_input.xml")
         clean_notacast.indent(xml)
         self.assert_equal_to_output("test_3_output.xml", xml)
+
+    def test_byte_buffer(self):
+        xml = ElementTree.parse(TEST_DATA_PATH / "test_1_input.xml")
+        clean_notacast.indent(xml.getroot())
+        buf = io.BytesIO()
+        xml.write(buf, encoding='utf-8', xml_declaration=True)
+        print(str(buf.getvalue(), 'utf-8'))
+
